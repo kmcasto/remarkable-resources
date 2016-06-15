@@ -40,8 +40,8 @@ public class EmailGen {
                
                 Random rand = new Random();
                
-                PrintWriter f0 = new PrintWriter(new FileWriter("people-" + System.currentTimeMillis()));
-               
+                PrintWriter f0 = new PrintWriter(new FileWriter("people.csv"));
+               f0.println( "\"" + "Name" + "\",\"" + "Email" +  "\"");
                 // Generate People
                 for(int i = 0; i < numPeople; i++) {
                         PersonNode person = new PersonNode();
@@ -80,8 +80,9 @@ public class EmailGen {
                 }
                
                
-                f0 = new PrintWriter(new FileWriter("emailgen-" + System.currentTimeMillis()));
+                f0 = new PrintWriter(new FileWriter("emailgen.csv"));
                
+                f0.println( "\"" + "SenderName" +  "\",\"" + "SenderEmail" +  "\",\"" + "ReceiverName" +  "\",\"" + "ReceiverEmail" + "\",\"" + "Subject" + "\"");
                 // for each keyword, for each person, from pool of people (minus person) generate 'email's from/to to add up to (close) to expert rating
        
                 // Generate emails
@@ -117,7 +118,7 @@ public class EmailGen {
                         if(emailer.getBaseExpert() <= expertLevel) {
                                 actualLevel += emailer.getBaseExpert();
                                 //String csvLine = emailer.getName() + ", " + emailer.getEmail() + ", " + person.getName() + ", " + person.getEmail() + ", " + chance.sentence() + " " + keyword + " " + chance.sentence();
-                                String csvLine = emailer.getName() + ", " + emailer.getEmail() + ", " + person.getName() + ", " + person.getEmail() + ", " + keyword;
+                                String csvLine = "\"" + emailer.getName() + "\"" + "," + "\"" + emailer.getEmail() +  "\"" + "," +  "\"" + person.getName() + "\"" +  "," +  "\"" + person.getEmail() + "," +  "\"" + keyword +  "\"";
                                 System.out.println("\t Adding email with expert level " + emailer.getBaseExpert());
                                 f0.println(csvLine);
                         }

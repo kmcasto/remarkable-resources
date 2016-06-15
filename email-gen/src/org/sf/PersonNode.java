@@ -28,7 +28,7 @@ public class PersonNode {
         }
        
         public String toString() {
-                return this.name + ", " + this.email;
+                return "\"" + this.name + "\"" + "," + "\"" + this.email + "\"";
         }
        
        

@@ -1,35 +1,36 @@
 <html>
-<head>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.js"></script>
-<script src="js/everything.js"></script>
-<script type="text/template" id="template">
+	<head>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.js"></script>
+		<script src="js/everything.js"></script>
+		<script type="text/template" id="template">
    {{#elements}}
       <div id="{{id}}">
          {{content}}
       </div>
    {{/elements}}
-</script>
-</head>
-<body>
-	<input type="text" id="keyword">
-	<button type="button" onclick="magic()">Click Me!</button>
+		</script>
+	</head>
+	<body>
+		<input type="text" id="keyword">
+		<button type="button" onclick="magic()">Click Me!</button>
 
-<!--
-	<div>
+	<!--
 		<div>
-			<h2>Panda Cat</h2>
-			<ul>
-				<li>Title</li>
-				<li>Email</li>
-				<li>Relevance</li>
-			</ul>
+			<div>
+				<h2>Panda Cat</h2>
+				<ul>
+					<li>Title</li>
+					<li>Email</li>
+					<li>Relevance</li>
+				</ul>
+			</div>
+			<div>
+				<img src="http://placekitten.com/g/100/100" alt="Panda Cat" />
+			</div>
 		</div>
-		<div>
-			<img src="http://placekitten.com/g/100/100" alt="Panda Cat" />
-		</div>
-	</div>
--->
-</body>
+	-->
+	</body>
 </html>

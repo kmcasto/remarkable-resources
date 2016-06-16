@@ -2,19 +2,36 @@
 	<head>
 		<title>KnowledgeWave</title>
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.js"></script>
 		<script src="js/everything.js"></script>
-		<script type="text/template" id="template">
-   {{#elements}}
-      <div id="{{id}}">
-         {{content}}
-      </div>
-   {{/elements}}
+		<script id="sample" type="text/template">
+				<div class="col-sm-4">
+					<div class="panel panel-danger">
+						<div class="panel-heading">
+							{{name}}
+							<span class="badge">{{hits}}</span>
+						</div>
+						<div class="panel-body">
+							<li>Title: Software Developer</li>
+							<li>Email: {{email}}</li>
+							<!--<span class="badge">{{hits}}</span>-->
+							<!--<li>Relevance: {{hits}}</li>-->
+						</div>
+					</div>							
+				</div>
+		<!--
+				<li>Name: {{name}}</li>
+				<li>Title: Software Developer</li>
+				<li>Email: {{email}}</li>
+				<li>Relevance: {{hits}}</li>
+				<br>
+		-->
 		</script>
 	</head>
-	<body data-spy="scroll" data-target=".navbar" data-offset="50">
+	<body data-spy="affix" data-target=".navbar" data-offset-top="0">
+		<!-- nav bar definition -->
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -25,41 +42,33 @@
 					</button>
 					<a class="navbar-brand" href="#">KnowledgeWave</a>
 				</div>
-				<div class="collapse navbar-collapse" id="myNavbar">
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="#">Home</a></li>
-						<li><a href="#">Page 1</a></li>
-						<li><a href="#">Page 2</a></li>
-						<li><a href="#">Page 3</a></li>
-					</ul>
-				</div>
 			</div>
 		</nav>
+		
+		<!-- Search row div -->
 		<div class="row">
 			<div class="col-sm-4"></div>
 			<div class="col-sm-4">			
 				<form class="form-inline" role="form">
 					<div class="form-group has-feedback">
-						<input type="text" placeholder="search..." class="form-control input-lg" id="term">
+						<input id="keyword" type="text" placeholder="search..." class="form-control input-lg" id="term">
 						<i class="glyphicon glyphicon-search form-control-feedback"></i>
 					</div>
-					<button type="submit" class="btn btn-danger">Search</button>
+					<button onclick="magic()" type="submit" class="btn btn-danger">Search</button>
 				</form>			
 			</div>
 			<div class="col-sm-4"></div>			
 		</div>
+		
+		<!-- Results -->
 		<div class="row">
 			<div class="col-sm-2"></div>
 			<div class="col-sm-8">				
 				<div class="panel panel-danger">
-					<div class="panel-heading">Result</div>
+					<div class="panel-heading">Results</div>
 					<div class="panel-body">
 						<div class="row">
-							<div class="col-sm-4">
-								<div class="panel panel-danger">
-									<div class="panel-heading">Joe Aesthetic</div>
-									<div class="panel-body">Info</div>
-								</div>							
+							<div id="results">							
 							</div>
 							<div class="col-sm-8"></div>
 						</div>
@@ -68,24 +77,5 @@
 			</div>
 			<div class="col-sm-2"></div>
 		</div>
-  </div>
-	<!--
-		<input type="text" id="keyword">
-		<button type="button" onclick="magic()">Click Me!</button>
-	
-		<div>
-			<div>
-				<h2>Panda Cat</h2>
-				<ul>
-					<li>Title</li>
-					<li>Email</li>
-					<li>Relevance</li>
-				</ul>
-			</div>
-			<div>
-				<img src="http://placekitten.com/g/100/100" alt="Panda Cat" />
-			</div>
-		</div>
-	-->
 	</body>
 </html>

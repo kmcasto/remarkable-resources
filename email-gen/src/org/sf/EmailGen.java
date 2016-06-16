@@ -118,7 +118,7 @@ public class EmailGen {
                         if(emailer.getBaseExpert() <= expertLevel) {
                                 actualLevel += emailer.getBaseExpert();
                                 //String csvLine = emailer.getName() + ", " + emailer.getEmail() + ", " + person.getName() + ", " + person.getEmail() + ", " + chance.sentence() + " " + keyword + " " + chance.sentence();
-                                String csvLine = "\"" + emailer.getName() + "\"" + "," + "\"" + emailer.getEmail() +  "\"" + "," +  "\"" + person.getName() + "\"" +  "," +  "\"" + person.getEmail() + "," +  "\"" + keyword +  "\"";
+                                String csvLine = "\"" + emailer.getName() + "\"" + "," + "\"" + emailer.getEmail() +  "\"" + "," +  "\"" + person.getName() + "\"" +  "," +  "\"" + person.getEmail() + "\"" + "," +  "\"" + keyword +  "\"";
                                 System.out.println("\t Adding email with expert level " + emailer.getBaseExpert());
                                 f0.println(csvLine);
                         }

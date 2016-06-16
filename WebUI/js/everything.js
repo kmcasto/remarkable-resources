@@ -1,5 +1,10 @@
 $(document).ready(function() {
 	console.log('hello');
+	
+	$( "#magicButton" ).click(function() {
+		console.log('button click');
+		magic();
+});
 });
 
 function magic() {
@@ -18,7 +23,7 @@ function magic() {
 			                 }
 			               ]
 			             };
-	
+	console.log(neoRequest);
 	var url = "http://192.168.1.138:7474/db/data/transaction";
 	$.ajax(url, {
 	    data : JSON.stringify(neoRequest),
@@ -26,7 +31,7 @@ function magic() {
 	    type : 'POST',
 	    crossDomain: true,
 	    success: function(response){buildPage(response)},
-		failure: function(errMsg) {alert(errMsg);}
+		failure: function(errMsg) {console.log(errMsg);}
 	});
 
 }

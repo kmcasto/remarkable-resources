@@ -4,18 +4,20 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.js"></script>
 <script src="js/everything.js"></script>
-<script type="text/template" id="template">
-   {{#elements}}
-      <div id="{{id}}">
-         {{content}}
-      </div>
-   {{/elements}}
+<script id="sample" type="text/template">
+			<li>Name: {{name}}</li>
+			<li>Title: Software Developer</li>
+			<li>Email: {{email}}</li>
+			<li>Relevance: {{hits}}</li>
+			<br>
 </script>
 </head>
 <body>
 	<input type="text" id="keyword">
 	<button type="button" onclick="magic()">Click Me!</button>
-
+	<div id="results">
+	
+	</div>
 <!--
 	<div>
 		<div>

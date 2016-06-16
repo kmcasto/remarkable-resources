@@ -2,9 +2,9 @@
 	<head>
 		<title>KnowledgeWave</title>
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script src="js/everything.js"></script>
 		<script id="sample" type="text/template">
 				<div class="col-sm-4">
@@ -15,21 +15,22 @@
 						</div>
 						<div class="panel-body">
 							<li>Title: Software Developer</li>
-							<li>Email: {{email}}</li>
-							<!--<span class="badge">{{hits}}</span>-->
-							<!--<li>Relevance: {{hits}}</li>-->
+							<li>Email: {{email}}</li><br>
+							<button onclick="moreMagic('{{email}}', '{{id}}')" type="button" class="btn btn-danger btn-xs">
+								<span class="glyphicon glyphicon-plus"></span> more...
+							</button>
+							<ul id="{{id}}">
+							</ul>
 						</div>
 					</div>							
 				</div>
-		<!--
-				<li>Name: {{name}}</li>
-				<li>Title: Software Developer</li>
-				<li>Email: {{email}}</li>
-				<li>Relevance: {{hits}}</li>
-				<br>
-		-->
+		</script>
+		
+		<script id="sample2" type="text/template">
+			<li>{{subject}} - <span class="badge">{{weight}}</span></li>
 		</script>
 	</head>
+	
 	<body data-spy="affix" data-target=".navbar" data-offset-top="0">
 		<!-- nav bar definition -->
 		<nav class="navbar navbar-inverse">
@@ -40,7 +41,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">KnowledgeWave</a>
+					<a class="navbar-brand" href="#">RemarkableResources</a>
 				</div>
 			</div>
 		</nav>
